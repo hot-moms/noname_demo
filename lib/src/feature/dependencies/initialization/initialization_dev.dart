@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
+import 'package:go_router/go_router.dart';
 import 'package:noname_demo/src/core/components/rest_client/src/rest_client_dio.dart';
 import 'package:noname_demo/src/feature/dependencies/initialization/init/initialization.dart';
 import 'package:noname_demo/src/feature/dependencies/model/dependencies.dart';
@@ -28,6 +29,10 @@ class DependencyInitializationDev extends AppDependency {
         (
           'User Data Provider',
           (container) async => container.userDataProvider = UserDataProviderNetwork(restClient: container.restClient!),
+        ),
+        (
+          'GoRouter configure',
+          (_) => GoRouter.optionURLReflectsImperativeAPIs = true,
         ),
       ];
 
