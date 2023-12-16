@@ -128,4 +128,7 @@ class _UserInputScreenState extends State<UserInputScreen> {
               ),
             ],
           )));
+
+  String? inputValidator(input) =>
+      input?.codeUnits.every(_allowedCodeUnits.contains) ?? false ? null : 'Поле ввода может содержать только цифры';
 }

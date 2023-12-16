@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:noname_demo/src/feature/dependencies/widget/dependencies_scope.dart';
 import 'package:noname_demo/src/feature/user/controller/details/user_details_bloc.dart';
 import 'package:noname_demo/src/feature/user/model/user_entity.dart';
+import 'package:pure/pure.dart';
 
 class UserDetailsScreen extends StatefulWidget {
   const UserDetailsScreen({
@@ -47,7 +48,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                           children: [
                             CircleAvatar(
                               radius: 32,
-                              foregroundImage: avatarUrl != null ? NetworkImage(avatarUrl) : null,
+                              foregroundImage: avatarUrl?.pipe(NetworkImage.new),
                               backgroundColor: Colors.grey.shade600,
                               child: const Icon(
                                 Icons.person,

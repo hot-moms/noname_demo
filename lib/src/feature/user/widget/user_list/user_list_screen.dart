@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:noname_demo/src/feature/dependencies/widget/dependencies_scope.dart';
 import 'package:noname_demo/src/feature/user/controller/pagination/user_pagination_bloc.dart';
+import 'package:pure/pure.dart';
 import 'package:sliver_tools/sliver_tools.dart';
 
 class UserListScreen extends StatefulWidget {
@@ -67,12 +68,17 @@ class _UserListScreenState extends State<UserListScreen> {
                               return state.isEmpty
                                   ? const ListTileShimmer()
                                   : ListTile(
-                                      onTap: () => context.pushNamed('user_details', pathParameters: {'id': (user?.id).toString()}),
+                                      onTap: () => context.pushNamed(
+                                            'user_details',
+                                            pathParameters: {
+                                              'id': (user?.id).toString(),
+                                            },
+                                          ),
                                       title: Text(userName),
                                       subtitle: Text(user?.fullName != null ? metaInfo : 'Hello world!'),
                                       leading: CircleAvatar(
                                         radius: 32,
-                                        foregroundImage: avatarUrl != null ? NetworkImage(avatarUrl) : null,
+                                        foregroundImage: avatarUrl?.pipe(NetworkImage.new),
                                         backgroundColor: Colors.grey.shade600,
                                         child: const Icon(
                                           Icons.person,
