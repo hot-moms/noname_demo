@@ -1,16 +1,17 @@
 # noname_demo
 
-A new Flutter project.
+Демо | Веб превью: https://hot-moms.github.io/noname_demo/
 
-## Getting Started
+По ТЗ не разрешалось использовать кастомные решения по стейт менеджменту, кроме
+блока
 
-This project is a starting point for a Flutter application.
+- Использовано: bloc, go_router, dio
+- Модели и DTO прописаны руками и через экстеншены для vscode
+- Использованы собственные наработки по логгеру, инициализации зависимостей,
+  роутингу
+- Вся бизнес-логика содержится только в bloc'ах
 
-A few resources to get you started if this is your first Flutter project:
+Вёрстка виджетов немного упрощена, главное показать архитектуру
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Имеется микропример (на главной) адаптивной (не путать с респонсивной) вёрстки,
+пример выглядит хорошо и с пк и с телефона
