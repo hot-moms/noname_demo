@@ -12,10 +12,6 @@ const _defaultState = UserDetailsState.idle(
   requestedId: null,
 );
 
-// comm: вообще, у меня есть собственная реализация универсального блока пагинации
-// где ты тупо обьявляешь репозиторий под определенной абстракцией и можешь спокойно юзать
-// но я решил сюда его не пихать иначе вообще сойдешь с ума читая его :D
-// там дженерик на дженерике в дженерике под дженериками в дженериках с дженериками и так далее :D
 class UserDetailsBloc extends Bloc<UserDetailsEvent, UserDetailsState> {
   UserDetailsBloc({required IUserRepository userRepository, UserEntity? defaultEntity})
       : _userRepository = userRepository,
