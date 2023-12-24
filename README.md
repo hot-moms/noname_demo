@@ -1,6 +1,6 @@
 # noname_demo
 
-Демо | Веб превью: https://hot-moms.github.io/noname_demo/
+Демо | Веб превью: https://kitsuniru.github.io/noname_demo/
 
 По ТЗ не разрешалось использовать кастомные решения по стейт менеджменту, кроме
 блока
